@@ -18,17 +18,10 @@ for specific examples of each macro.
 
 Some general guidelines:
 
-1. Require SynThread with the alias `->` like this in Clojure:
+1. Require SynThread with the alias `->` like this:
 ```clojure
    (ns your.ns.here
      (:require [lonocloud.synthread :as ->]))
-```
-
-or like this if you use Clojurescript:
-
-```clojure
-   (ns your.ns.here
-     (:require [lonocloud.synthread :as -> :include-macros true]))
 ```
 
 2. Always start a threaded block with Clojure's standard `->` macro or `->/do` (see next point).
