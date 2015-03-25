@@ -6,6 +6,8 @@
   #+clj
   (:require [lonocloud.synthread.core :refer :all])
   #+cljs
+  (:require-macros lonocloud.synthread)
+  #+cljs
   (:require [lonocloud.synthread.core :refer [>reset >apply]]
             [lonocloud.synthread.impl]))
 
