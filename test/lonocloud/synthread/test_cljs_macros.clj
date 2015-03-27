@@ -1,5 +1,5 @@
-(ns lonocloud.synthread.test-macros
-  (:require [clojure.test :refer [is]]))
+(ns lonocloud.synthread.test-cljs-macros
+  (:require [cljs.test :refer [is]]))
 
 (defmacro ->is
   ([x op]
