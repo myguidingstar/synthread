@@ -332,6 +332,13 @@
   [x binding & body]
   `(>each ~x (>as ~binding ~@body)))
 
+#+clj
+(defmacro >each-indexed-as
+  "EXPERIMENTAL Thread each item in x through body and bind the given symbol to the item's position in the collection (counting from 0)."
+  [x index-var & body]
+  `(let [x# ~x]
+     (impl/replace-content x# (map-indexed #(let [~index-var %1] (>do %2 ~@body)) x#))))
+
 ;; Section 3: Additional helper functions.
 
 (defn >apply
