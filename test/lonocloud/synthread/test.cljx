@@ -9,19 +9,6 @@
   (:require [lonocloud.synthread :as ->]
             [cljs.test :refer-macros [deftest is]]))
 
-#+clj
-(defmacro ->is
-  ([x op]
-   (let [xx '<topic>]
-     `(let [~xx ~x]
-        (is (~op ~xx))
-        ~xx)))
-  ([x binop v]
-   (let [xx '<topic>]
-     `(let [~xx ~x]
-        (is (~binop ~xx ~v))
-        ~xx))))
-
 (deftest test-do
   (is (= (-> 0 inc (+ 2) (- 1 1))
          (->/do 0 inc (+ 2) (- 1 1)))))
