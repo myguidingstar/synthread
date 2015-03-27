@@ -42,7 +42,7 @@
 #+clj
 (doseq [macro-name '[do if let if-let when when-not when-let for first
                     second nth take drop last butlast rest update let
-                    fn as aside side each each-as cond in]]
+                    fn as aside side each each-as each-indexed-as cond in]]
   (alias-macro macro-name))
 
 ;; alias functions
