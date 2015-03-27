@@ -267,6 +267,19 @@
       (do [(* 10 k) (+ 10 v)]))
     (->is = {10 12, 30 14, 50 16})))
 
+(deftest test-each-indexed-as
+  (-> [0 2 4 6 8]
+      (->/each-indexed-as i
+       (+ i))
+      ;; + 0 2 4 6 8
+      ;;   0 1 2 3 4
+      (->is = [0 3 6 9 12]))
+  (->/do {:a 1 :b 1 :c 1 :d 1}
+         (->/each-indexed-as i
+          (->/as [k v]
+           (do [i v])))
+         (->is = {0 1, 1 1, 2 1, 3 1})))
+
 (deftest test-reset
   (-> 0
       (->/reset 5)
