@@ -1,12 +1,12 @@
 (ns lonocloud.synthread.test
   #+clj
-  (:require [lonocloud.synthread :as ->])
+  (:require [lonocloud.synthread :as ->]
+            [clojure.test :refer [deftest is]]
+            [lonocloud.synthread.test-macros :refer [->is]])
   #+cljs
-  (:require-macros [lonocloud.synthread.test-macros :refer [->is]])
-  #+clj
-  (:require [clojure.test :refer [deftest is]])
+  (:require-macros [lonocloud.synthread.test-cljs-macros :refer [->is]])
   #+cljs
-  (:require [lonocloud.synthread :as -> :include-macros true]
+  (:require [lonocloud.synthread :as ->]
             [cljs.test :refer-macros [deftest is]]))
 
 #+clj
